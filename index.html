@@ -59,7 +59,34 @@
     .slider_anim_zoom {
       animation-name: slide-anim-zoom;
       animation-duration: 10s;
-      animation-iteration-count: infinite;
+    }
+
+    @keyframes slide-anim-pan-right {
+      from {
+        transform: translate3d(0px, 0px, 0px) scale(1.2, 1.2); transform-origin: 50% 50% 0px;
+      }
+      to {
+        transform: translate3d(100px, 0px, 0px) scale(1.2, 1.2); transform-origin: 50% 50% 0px;
+      }
+    }
+
+    .slider_anim_pan_right {
+      animation-name: slide-anim-pan-right;
+      animation-duration: 15s;
+    }
+
+    @keyframes slide-anim-pan-left {
+      from {
+        transform: translate3d(0px, 0px, 0px) scale(1.2, 1.2); transform-origin: 50% 50% 0px;
+      }
+      to {
+        transform: translate3d(-120px, 0px, 0px) scale(1.2, 1.2); transform-origin: 50% 50% 0px;
+      }
+    }
+
+    .slider_anim_pan_left {
+      animation-name: slide-anim-pan-left;
+      animation-duration: 15s;
     }
 
   </style>
@@ -96,6 +123,12 @@
         if (nextSlide == 0) {
           var element = document.getElementById("slider_01");
           element.classList.add("slider_anim_zoom");
+        } else if (nextSlide == 1) {
+          var element = document.getElementById("slider_02");
+          element.classList.add("slider_anim_pan_right");
+        } else if (nextSlide == 2) {
+          var element = document.getElementById("slider_03");
+          element.classList.add("slider_anim_pan_left");
         }
       });
 
@@ -104,6 +137,12 @@
         if (currentSlide == 1) {
           var element = document.getElementById("slider_01");
           element.classList.remove("slider_anim_zoom");
+        } else if (currentSlide == 2) {
+          var element = document.getElementById("slider_02");
+          element.classList.remove("slider_anim_pan_right");
+        } else if (currentSlide == 0) {
+          var element = document.getElementById("slider_03");
+          element.classList.remove("slider_anim_pan_left");
         }
       });
     });
