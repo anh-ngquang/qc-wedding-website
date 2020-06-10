@@ -1,6 +1,7 @@
 <html>
   <head>
-  <title>My Now Amazing Webpage</title>
+    <meta charset="UTF-8">
+  <title>Quang Anh & Thu Trang</title>
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
   <style>
@@ -38,13 +39,63 @@
 
     #bridegroomname {
       font-family: 'Gistesy';
-      font-size: 70px;
+      font-size: 90px;
+      font-style: italic;
       color: white;
+      margin-bottom: 20px;
+    }
+
+    #weddingdate {
+      font-family: 'CormorantLight';
+      font-size: 90px;
+      font-style: italic;
+      color: white;
+    }
+
+    #countdowntimer {
+      margin-top: 20px;
+    }
+
+    #countdowntable {
+      margin-left:auto; 
+      margin-right:auto;
+    }
+
+    #countdowntable td {
+      text-align: center;
+      font-family: 'CormorantLight';
+      color: white;
+      font-size: 100px;
+      
+      width: 150px;
+    }
+
+    #timeunitrow td {
+      font-size: 30px;
+    }
+
+    .hidden {
+      visibility: hidden;
     }
 
     @font-face {
       font-family: 'Gistesy'; /*a name to be used later*/
       src: url('fonts/Gistesy.ttf'); /*URL to font*/
+    }
+
+    @font-face {
+      font-family: 'MadeSaonara'; /*a name to be used later*/
+      src: url('fonts/made_saonara.otf'); /*URL to font*/
+    }
+
+    @font-face {
+      font-family: 'Cormorant'; /*a name to be used later*/
+      src: url('fonts/Cormorant-Regular.ttf'); /*URL to font*/
+    }
+
+    @font-face {
+      font-family: 'CormorantLight'; /*a name to be used later*/
+      src: url('fonts/CormorantLight.ttf'); /*URL to font*/
     }
 
     @keyframes slide-anim-zoom {
@@ -72,7 +123,7 @@
 
     .slider_anim_zoom_right {
       animation-name: slide-anim-zoom-right;
-      animation-duration: 20s;
+      animation-duration: 25s;
     }
 
     @keyframes slide-anim-zoom-left {
@@ -80,73 +131,268 @@
         transform: translate3d(0px, 0px, 0px) scale(1.0, 1.0); transform-origin: 100% 0% 0px;
       }
       to {
-        transform: translate3d(-120px, 0px, 0px) scale(1.2, 1.2); transform-origin: 100% 0% 0px;
+        transform: translate3d(0px, 0px, 0px) scale(1.2, 1.2); transform-origin: 100% 0% 0px;
       }
     }
 
     .slider_anim_zoom_left {
       animation-name: slide-anim-zoom-left;
-      animation-duration: 20s;
+      animation-duration: 25s;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .fade_in {
+      animation-name: fade-in;
+      animation-duration: 1s;
+    }
+
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade_in_up {
+      animation-name: fade-in-up;
+      animation-duration: 1s;
+      visibility: visible;
+    }
+
+    @keyframes fade-in-down {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade_in_down {
+      animation-name: fade-in-down;
+      animation-duration: 1s;
+      visibility: visible;
+    }
+
+    .section_header {
+      margin-top: 90px;
+      margin-bottom: 30px;
+      text-align: center;
+      padding: 0;
+
+    }
+
+    .section_title {
+      font-family: 'CormorantLight';
+      color: #121f38;
+      font-size: 33px;
+      margin-top: 10px;
+    }
+
+    .section_body {
+      text-align: center;
+    }
+
+    .story_title {
+      font-family: 'CormorantLight';
+      font-size: 30px;
+    }
+
+    .story_title::before {
+      content: '';
+      position: absolute;
+      height: 70px;
+      width: 1px;
+      background-color: #deebf5;
+      left: 50%;
+      bottom: -220px;
     }
 
   </style>
   </head>
   <body>
-  <div id="header">
-    <div id="slider">
-      <div><img id="slider_01" class="slider_anim_zoom" src="imgs/slider_01.jpg"></div>
-      <div><img id="slider_02" src="imgs/slider_02.jpg"></div>
-      <div><img id="slider_03" src="imgs/slider_03.jpg"></div>
+    <div id="header" class="fade_in">
+      <div id="slider">
+        <div><img id="slider_01" class="slider_anim_zoom" src="imgs/slider_01.jpg"></div>
+        <div><img id="slider_02" src="imgs/slider_02.jpg"></div>
+        <div><img id="slider_03" src="imgs/slider_03.jpg"></div>
+      </div>
+      <div id="header-info" class="center">
+        <div id="bridegroomname" class="hidden" >Quang Anh & Thu Trang</div>
+        <div id="weddingdate" class="hidden">12 . 07 . 2020</div>
+        <div id="countdowntimer" class="hidden">
+          <table id="countdowntable">
+            <tr>
+              <td id="days">00</td>
+              <td id="hours">00</td>
+              <td id="minutes">00</td>
+              <td id="seconds">00</td>
+            </tr>
+            <tr id="timeunitrow">
+              <td>ngày</td>
+              <td>giờ</td>
+              <td>phút</td>
+              <td>giây</td>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
-    <div id="header-info" class="center">
-      <div id="bridegroomname">Quang Anh & Thu Trang</div>
+    <div id="section_story">
+      <div class="section_header">
+        <img width="87" height="63" src="imgs/section-title-img.png">
+        <div class="section_title">Câu chuyện của chúng tôi</div>
+      </div>
+      <div class="section_body">
+        <div class="story">
+          <div class="story_title">Lần đầu gặp nhau</div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('#slider').slick({
-        infinite:true,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        speed:1000,
-        fade:true,
-        cssEase: 'linear'
-      });
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#slider').slick({
+          infinite:true,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          speed:1000,
+          fade:true,
+          cssEase: 'linear'
+        });
 
-      $('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-        console.log("beforeChange: " + nextSlide);
-        if (nextSlide == 0) {
-          var element = document.getElementById("slider_01");
-          element.classList.add("slider_anim_zoom");
-        } else if (nextSlide == 1) {
-          var element = document.getElementById("slider_02");
-          element.classList.add("slider_anim_zoom_right");
-        } else if (nextSlide == 2) {
-          var element = document.getElementById("slider_03");
-          element.classList.add("slider_anim_zoom_left");
+        var bridegroomname = document.getElementById("bridegroomname");
+        bridegroomname.classList.add("fade_in_down");
+        bridegroomname.classList.remove("hidden");
+
+        var a = setInterval(function() {
+          var weddingdate = document.getElementById("weddingdate");
+        weddingdate.classList.add("fade_in_up");
+        weddingdate.classList.remove("hidden");
+        }, 300);
+
+        var b = setInterval(function() {
+          var countdowntimer = document.getElementById("countdowntimer");
+        countdowntimer.classList.add("fade_in_up");
+        countdowntimer.classList.remove("hidden");
+        }, 600);
+
+
+        // SLIDER
+        var slider_items = ["slider_01", "slider_02", "slider_03"];
+        var slider_anims = ["slider_anim_zoom", "slider_anim_zoom_right", "slider_anim_zoom_left"];
+
+        var slider_items_count = slider_items.length;
+        var slider_anims_count = slider_anims.length;
+
+        $('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+          console.log("beforeChange: " + nextSlide);
+
+          var nextSlideAnim = slider_anims[nextSlide % slider_anims_count];
+          var nextSlideElement = slider_items[nextSlide];
+
+          var element = document.getElementById(nextSlideElement);
+          element.classList.add(nextSlideAnim);
+
+          // if (nextSlide == 0) {
+          //   var element = document.getElementById("slider_01");
+          //   element.classList.add("slider_anim_zoom");
+          // } else if (nextSlide == 1) {
+          //   var element = document.getElementById("slider_02");
+          //   element.classList.add("slider_anim_zoom_right");
+          // } else if (nextSlide == 2) {
+          //   var element = document.getElementById("slider_03");
+          //   element.classList.add("slider_anim_zoom_left");
+          // }
+        });
+
+        $('#slider').on('afterChange', function(event, slick, currentSlide){
+          console.log("afterChange: " + currentSlide);
+
+          if (currentSlide == 0)
+            currentSlide = slider_items_count;
+
+          var previousSlideAnim = slider_anims[(currentSlide - 1) % slider_anims_count];
+          var previousSlideElement = slider_items[currentSlide - 1];
+
+          var element = document.getElementById(previousSlideElement);
+          element.classList.remove(previousSlideAnim);
+
+          // if (currentSlide == 1) {
+          //   var element = document.getElementById("slider_01");
+          //   element.classList.remove("slider_anim_zoom");
+          // } else if (currentSlide == 2) {
+          //   var element = document.getElementById("slider_02");
+          //   element.classList.remove("slider_anim_zoom_right");
+          // } else if (currentSlide == 0) {
+          //   var element = document.getElementById("slider_03");
+          //   element.classList.remove("slider_anim_zoom_left");
+          // }
+        });
+
+
+        // COUNTDOWN TIMER
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jul 12, 2020 11:00:00").getTime();
+
+        function updateCountdown() {
+         // Get today's date and time
+          var now = new Date().getTime();
+
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          Number.prototype.pad = function(size) {
+              var s = String(this);
+              while (s.length < (size || 2)) {s = "0" + s;}
+              return s;
+          }
+
+          // Display the result in the element
+          document.getElementById("days").innerHTML = days.pad();
+          document.getElementById("hours").innerHTML = hours.pad();
+          document.getElementById("minutes").innerHTML = minutes.pad();
+          document.getElementById("seconds").innerHTML = seconds.pad();
+
+          // If the count down is finished, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          } 
         }
-      });
+   
+        updateCountdown();
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+          updateCountdown();
+        }, 1000);
 
-      $('#slider').on('afterChange', function(event, slick, currentSlide){
-        console.log("afterChange: " + currentSlide);
-        if (currentSlide == 1) {
-          var element = document.getElementById("slider_01");
-          element.classList.remove("slider_anim_zoom");
-        } else if (currentSlide == 2) {
-          var element = document.getElementById("slider_02");
-          element.classList.remove("slider_anim_zoom_right");
-        } else if (currentSlide == 0) {
-          var element = document.getElementById("slider_03");
-          element.classList.remove("slider_anim_zoom_left");
-        }
       });
-    });
-  </script>
+    </script>
 
   </body>
 </html>
