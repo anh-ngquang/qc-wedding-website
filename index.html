@@ -1,228 +1,282 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-  <title>Quang Anh & Thu Trang</title>
-  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-  <style>
-    .slick-slide:not(.slick-active) {
-      transition-delay: 500ms !important;
-    }
-    #slider img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    body{
-      margin:0;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <title>Quang Anh & Thu Trang</title>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <style>
 
-    #header {
-      position: relative;
-    }
+      *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-    #header-info {
-      z-index: 10;
-      width: 100%;
-      text-align: center;
-    }
-
-    .center {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-    }
-
-    #bridegroomname {
-      font-family: 'Gistesy';
-      font-size: 90px;
-      font-style: italic;
-      color: white;
-      margin-bottom: 20px;
-    }
-
-    #weddingdate {
-      font-family: 'CormorantLight';
-      font-size: 90px;
-      font-style: italic;
-      color: white;
-    }
-
-    #countdowntimer {
-      margin-top: 20px;
-    }
-
-    #countdowntable {
-      margin-left:auto; 
-      margin-right:auto;
-    }
-
-    #countdowntable td {
-      text-align: center;
-      font-family: 'CormorantLight';
-      color: white;
-      font-size: 100px;
-      
-      width: 150px;
-    }
-
-    #timeunitrow td {
-      font-size: 30px;
-    }
-
-    .hidden {
-      visibility: hidden;
-    }
-
-    @font-face {
-      font-family: 'Gistesy'; /*a name to be used later*/
-      src: url('fonts/Gistesy.ttf'); /*URL to font*/
-    }
-
-    @font-face {
-      font-family: 'MadeSaonara'; /*a name to be used later*/
-      src: url('fonts/made_saonara.otf'); /*URL to font*/
-    }
-
-    @font-face {
-      font-family: 'Cormorant'; /*a name to be used later*/
-      src: url('fonts/Cormorant-Regular.ttf'); /*URL to font*/
-    }
-
-    @font-face {
-      font-family: 'CormorantLight'; /*a name to be used later*/
-      src: url('fonts/CormorantLight.ttf'); /*URL to font*/
-    }
-
-    @keyframes slide-anim-zoom {
-      from {
-        transform: translate3d(0px, 0px, 0px) scale(1.0, 1.0); transform-origin: 50% 50% 0px;
+      .slick-slide:not(.slick-active) {
+        transition-delay: 500ms !important;
       }
-      to {
-        transform: translate3d(0px, 0px, 0px) scale(1.1, 1.1); transform-origin: 50% 50% 0px;
+      #slider img {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
       }
-    }
-
-    .slider_anim_zoom {
-      animation-name: slide-anim-zoom;
-      animation-duration: 10s;
-    }
-
-    @keyframes slide-anim-zoom-right {
-      from {
-        transform: translate3d(0px, 0px, 0px) scale(1.0, 1.0); transform-origin: 0% 0% 0px;
+      body{
+        margin:0;
       }
-      to {
-        transform: translate3d(0px, 0px, 0px) scale(1.2, 1.2); transform-origin: 0% 0% 0px;
+
+      #header {
+        position: relative;
       }
-    }
 
-    .slider_anim_zoom_right {
-      animation-name: slide-anim-zoom-right;
-      animation-duration: 25s;
-    }
-
-    @keyframes slide-anim-zoom-left {
-      from {
-        transform: translate3d(0px, 0px, 0px) scale(1.0, 1.0); transform-origin: 100% 0% 0px;
+      #header-info {
+        z-index: 10;
+        width: 100%;
+        text-align: center;
       }
-      to {
-        transform: translate3d(0px, 0px, 0px) scale(1.2, 1.2); transform-origin: 100% 0% 0px;
+
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
       }
-    }
 
-    .slider_anim_zoom_left {
-      animation-name: slide-anim-zoom-left;
-      animation-duration: 25s;
-    }
-
-    @keyframes fade-in {
-      from {
-        opacity: 0;
+      #bridegroomname {
+        font-family: 'Gistesy';
+        font-size: 90px;
+        font-style: italic;
+        color: white;
+        margin-bottom: 20px;
       }
-      to {
-        opacity: 1;
+
+      #weddingdate {
+        font-family: 'CormorantLight';
+        font-size: 90px;
+        font-style: italic;
+        color: white;
       }
-    }
 
-    .fade_in {
-      animation-name: fade-in;
-      animation-duration: 1s;
-    }
-
-    @keyframes fade-in-up {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
+      #countdowntimer {
+        margin-top: 20px;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      #countdowntable {
+        margin-left:auto; 
+        margin-right:auto;
       }
-    }
 
-    .fade_in_up {
-      animation-name: fade-in-up;
-      animation-duration: 1s;
-      visibility: visible;
-    }
-
-    @keyframes fade-in-down {
-      from {
-        opacity: 0;
-        transform: translateY(-40px);
+      #countdowntable td {
+        text-align: center;
+        font-family: 'CormorantLight';
+        color: white;
+        font-size: 100px;
+        
+        width: 150px;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      #timeunitrow td {
+        font-size: 30px;
       }
-    }
 
-    .fade_in_down {
-      animation-name: fade-in-down;
-      animation-duration: 1s;
-      visibility: visible;
-    }
+      .hidden {
+        visibility: hidden;
+      }
 
-    .section_header {
-      margin-top: 90px;
-      margin-bottom: 30px;
-      text-align: center;
-      padding: 0;
+      @font-face {
+        font-family: 'Gistesy'; /*a name to be used later*/
+        src: url('fonts/Gistesy.ttf'); /*URL to font*/
+      }
 
-    }
+      @font-face {
+        font-family: 'MadeSaonara'; /*a name to be used later*/
+        src: url('fonts/made_saonara.otf'); /*URL to font*/
+      }
 
-    .section_title {
-      font-family: 'CormorantLight';
-      color: #121f38;
-      font-size: 33px;
-      margin-top: 10px;
-    }
+      @font-face {
+        font-family: 'Cormorant'; /*a name to be used later*/
+        src: url('fonts/Cormorant-Regular.ttf'); /*URL to font*/
+      }
 
-    .section_body {
-      text-align: center;
-    }
+      @font-face {
+        font-family: 'CormorantLight'; /*a name to be used later*/
+        src: url('fonts/CormorantLight.ttf'); /*URL to font*/
+      }
 
-    .story_title {
-      font-family: 'CormorantLight';
-      font-size: 30px;
-    }
+      @font-face {
+        font-family: 'OppoUltraLight'; /*a name to be used later*/
+        src: url('fonts/Oppo-UltraLight.otf'); /*URL to font*/
+      }
 
-    .story_title::before {
-      content: '';
-      position: absolute;
-      height: 70px;
-      width: 1px;
-      background-color: #deebf5;
-      left: 50%;
-      bottom: -220px;
-    }
+      @keyframes slide-anim-zoom {
+        from {
+          transform: translate3d(0px, 0px, 0px) scale(1.0, 1.0); transform-origin: 50% 50% 0px;
+        }
+        to {
+          transform: translate3d(0px, 0px, 0px) scale(1.1, 1.1); transform-origin: 50% 50% 0px;
+        }
+      }
 
-  </style>
+      .slider_anim_zoom {
+        animation-name: slide-anim-zoom;
+        animation-duration: 10s;
+      }
+
+      @keyframes slide-anim-zoom-right {
+        from {
+          transform: translate3d(0px, 0px, 0px) scale(1.0, 1.0); transform-origin: 0% 0% 0px;
+        }
+        to {
+          transform: translate3d(0px, 0px, 0px) scale(1.2, 1.2); transform-origin: 0% 0% 0px;
+        }
+      }
+
+      .slider_anim_zoom_right {
+        animation-name: slide-anim-zoom-right;
+        animation-duration: 25s;
+      }
+
+      @keyframes slide-anim-zoom-left {
+        from {
+          transform: translate3d(0px, 0px, 0px) scale(1.0, 1.0); transform-origin: 100% 0% 0px;
+        }
+        to {
+          transform: translate3d(0px, 0px, 0px) scale(1.2, 1.2); transform-origin: 100% 0% 0px;
+        }
+      }
+
+      .slider_anim_zoom_left {
+        animation-name: slide-anim-zoom-left;
+        animation-duration: 25s;
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fade_in {
+        animation-name: fade-in;
+        animation-duration: 1s;
+      }
+
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade_in_up {
+        animation-name: fade-in-up;
+        animation-duration: 1s;
+        visibility: visible;
+      }
+
+      @keyframes fade-in-down {
+        from {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade_in_down {
+        animation-name: fade-in-down;
+        animation-duration: 1s;
+        visibility: visible;
+      }
+
+      .section_header {
+        margin-top: 90px;
+        margin-bottom: 20px;
+        text-align: center;
+        padding: 0;
+
+      }
+
+      .section_title {
+        font-family: 'CormorantLight';
+        color: #121f38;
+        font-size: 33px;
+        margin-top: 10px;
+      }
+
+      .section_body {
+        text-align: center;
+      }
+
+      .story {
+        max-width: 1000px;
+        margin: 0px auto;
+      }
+
+      .story_content {
+        background-color: #ffded9;
+        margin: 10px 0px 10px;
+        padding: 20px 0px 0px;
+      }
+
+      .story_title {
+        font-family: 'CormorantLight';
+        font-size: 30px;
+        margin-bottom: 5px;
+      }
+
+      .story_line {
+        height: 70px;
+        width: 2px;
+        background-color: #deebf5;
+        margin-left:auto; 
+        margin-right:auto;
+      }
+
+      .story_date {
+        font-family: 'CormorantLight';
+        font-size: 25px;
+        color: #c78665;
+        margin-bottom: 15px;
+      }
+
+      .story_description {
+        font-family: 'OppoUltraLight';
+        font-size: 15px;
+        color: #4a4a4a;
+        line-height: 2.0;
+        max-width: 800px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 10px;
+        padding: 0px 10px 0px;
+      }
+
+      .story_picture {
+        margin-bottom: 20px;
+      }
+
+      .story_picture img {
+        width: 100%;
+        max-width: 1000px;
+      }
+
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    
+    <script src="js/modernizr.custom.js"></script>
   </head>
   <body>
     <div id="header" class="fade_in">
@@ -259,7 +313,79 @@
       </div>
       <div class="section_body">
         <div class="story">
-          <div class="story_title">Lần đầu gặp nhau</div>
+          <div class="story_line"></div>
+          <div class="story_content">
+            <div class="story_title">Lần đầu gặp nhau</div>
+            <div class="story_date">15/01/2017</div>
+            <div class="story_description">Lần đầu gặp, gặp em trên phố, anh ngẩn ngơ thẫn thờ như người ngủ mơ. Chỉ một lần nhìn vào đôi mắt, em đã cho anh quên, quên đi tất cả.</div>
+            <div class="story_picture"><img src="imgs/firstmet.jpg"></div>
+          </div>
+        </div>
+        <div class="story">
+          <div class="story_line"></div>
+          <div class="story_content">
+            <div class="story_title">Yêu rồi đếy!</div>
+            <div class="story_date">17/02/2017</div>
+            <div class="story_description">Yêu là cùng nhau trong tay đi dưới con đường, là cùng trao cho nhau ngọt môi hôn, là vòng tay yêu thương ôm mãi không rời, từng phút giây tuyệt vời.</div>
+            <br/>
+          </div>
+        </div>
+        <div class="story">
+          <div class="story_line"></div>
+          <div class="story_content">
+            <div class="story_title">Cầm tay nhau đi muôn nơi</div>
+            <div class="story_description">Mình đi đâu thế bố ơi? Lên núi hay đi lên rừng? Bơi xuống sông hay xuống biển? Bố ơi tự nhiên con lo quá...</div>
+            <div class="container">
+              <ul class="grid effect-2" id="grid">
+                <li><img src="imgs/firstmet.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_02.jpg"></li>
+                <li><img src="imgs/slider_03.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_02.jpg"></li>
+                <li><img src="imgs/firstmet.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_02.jpg"></li>
+                <li><img src="imgs/firstmet.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_03.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_02.jpg"></li>
+                <li><img src="imgs/firstmet.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_02.jpg"></li>
+                <li><img src="imgs/slider_03.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_02.jpg"></li>
+                <li><img src="imgs/firstmet.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_02.jpg"></li>
+                <li><img src="imgs/firstmet.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_03.jpg"></li>
+                <li><img src="imgs/slider_01.jpg"></li>
+                <li><img src="imgs/slider_02.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="story">
+          <div class="story_line"></div>
+          <div class="story_content">
+            <div class="story_title">Cầu hôn</div>
+            <div class="story_date">28/04/2019</div>
+            <div class="story_description">Em có yêu anh không? Có muốn về nhà với anh không? Tình yêu anh xây đủ lớn để dù rời xa, ta vẫn có nhau.</div>
+            <div class="story_picture"><img src="imgs/engaged.jpg"></div>
+          </div>
+        </div>
+        <div class="story">
+          <div class="story_line"></div>
+          <div class="story_content">
+            <div class="story_title">Đám cưới</div>
+            <div class="story_date">12/07/2020</div>
+            <div class="story_description">Tấm thiệp mời trên bàn, thời gian địa điểm rõ ràng. Lại một đám mừng ở trong làng. Ngó tên bỗng dưng thấy hoang mang.</div>
+            <div class="story_picture"><img src="imgs/gettingmarried.jpg"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -267,9 +393,21 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+  
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/AnimOnScroll.js"></script>
 
     <script type="text/javascript">
+      new AnimOnScroll( document.getElementById( 'grid' ), {
+          minDuration : 0.4,
+          maxDuration : 0.7,
+          viewportFactor : 0.2
+        } );
+
       $(document).ready(function(){
+
         $('#slider').slick({
           infinite:true,
           autoplay: true,
@@ -304,7 +442,6 @@
         var slider_anims_count = slider_anims.length;
 
         $('#slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-          console.log("beforeChange: " + nextSlide);
 
           var nextSlideAnim = slider_anims[nextSlide % slider_anims_count];
           var nextSlideElement = slider_items[nextSlide];
@@ -325,7 +462,6 @@
         });
 
         $('#slider').on('afterChange', function(event, slick, currentSlide){
-          console.log("afterChange: " + currentSlide);
 
           if (currentSlide == 0)
             currentSlide = slider_items_count;
